@@ -28,7 +28,7 @@ source.exclude_dirs = tests, bin, venv, .venv, .git, .github, dist, build, __pyc
 version = 0.1.0
 
 # (list) Application requirements (comma separated)
-requirements = python3,kivy,libffi==3.4.4
+requirements = python3,kivy
 
 # (str) Supported orientation
 orientation = portrait
@@ -41,8 +41,8 @@ fullscreen = 0
 #------------------------------------------------------------------------------
 
 p4a.branch = develop
-android.api = 36
-android.ndk = 29
+android.api = 35
+android.ndk = 28c
 android.minapi = 24
 android.accept_sdk_license = True
 android.archs = arm64-v8a, armeabi-v7a
