@@ -93,6 +93,12 @@ jobs:
           echo "=== buildozer.spec (head) ==="
           head -40 buildozer.spec
           ls -la *.py 2>/dev/null | head -20 || true
+          - name: Update Docker
+          run: |
+            sudo apt-get update
+            sudo apt-get install --only-upgrade docker-ce docker-ce-cli containerd.io
+      - name: Pull Buildozer image
+        run: docker pull kivy/buildozer:stable
 
       - name: Build APK with Buildozer
         uses: ArtemSBulgakov/buildozer-action@v1
@@ -101,6 +107,8 @@ jobs:
           command: buildozer -v android debug
           workdir: .
           buildozer_version: stable
+          image: kivy/buildozer:stable
+          pull_image: false
 
       - name: Show APK outputs
         if: always()
