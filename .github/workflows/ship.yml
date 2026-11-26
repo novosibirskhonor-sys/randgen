@@ -93,8 +93,8 @@ jobs:
           echo "=== buildozer.spec (head) ==="
           head -40 buildozer.spec
           ls -la *.py 2>/dev/null | head -20 || true
-          - name: Update Docker
-          run: |
+      - name: Update Docker
+        run: |
             sudo apt-get update
             sudo apt-get install --only-upgrade docker-ce docker-ce-cli containerd.io
       - name: Pull Buildozer image
